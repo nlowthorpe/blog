@@ -1,0 +1,31 @@
+---
+layout: base.html
+title: Home
+---
+
+<h1>Hi, I'm Nicholas Lowthorpe 👋</h1>
+<p>I lead on solving messy, ambiguous business problems: challenging assumptions, focusing on what drives real
+outcomes, and ensuring investment in the right solutions.</p>
+<p>Outside of work, I’m a perpetual tinkerer - constantly experimenting, building, and learning. </p>
+<br>
+<a href="/about/" style="font-weight: 700;">More about my work and experience →</a>
+
+<br><br><br>
+
+<h2>Recent posts</h2>
+<ul class="post-list">
+{% assign recentPost = collections.posts | reverse | first %}
+{% if recentPost %}
+  <li>
+    <h3><a href="{{ recentPost.url }}">{{ recentPost.data.title }}</a></h3>
+    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+      {% if recentPost.data.description %}
+        {{ recentPost.data.description }}
+      {% else %}
+        {{ recentPost.templateContent | strip_html | truncate: 150 }}
+      {% endif %}
+    </p>
+    <a href="{{ recentPost.url }}" style="font-size: 0.9em; font-weight: 700; margin-top: 1rem; display: inline-block;">Read more →</a>
+  </li>
+{% endif %}
+</ul>

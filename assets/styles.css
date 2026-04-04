@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Pastel Light Mode Palette */
+  --bg-color: #fafcfc;
+  --sidebar-bg: #f2f7f5;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent-color: #a3c4bc; /* Soft mint green */
+  --hover-bg: #ffe8d6;     /* Soft peach */
+  
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  --font-main: 'Outfit', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+}
+
+a, a:link, a:visited {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+a:active, a:focus {
+  color: var(--text-primary);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+/* 2-Column Desktop Layout */
+.layout-container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: var(--sidebar-bg);
+  padding: var(--spacing-xl) 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.profile-container {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-circle img, .profile-circle svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-md);
+}
+
+.main-nav a {
+  font-size: 1.25rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  background-color: var(--hover-bg);
+  color: var(--accent-color);
+  font-weight: 700;
+  transform: scale(1.02);
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-xl) 5vw;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hover Highlight Effect for Content Links */
+.content a {
+  display: inline-block;
+  z-index: 1;
+}
+
+.content a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--accent-color);
+  opacity: 0.4;
+  z-index: -1;
+  transition: height var(--transition-speed) ease;
+}
+
+.content a:hover::after {
+  height: 100%;
+  opacity: 0.6;
+}
+
+/* Lists styling for blogs */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.post-list li:hover {
+  background-color: var(--sidebar-bg); /* subtle color shift */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.post-list a {
+  font-size: 1.2rem;
+}
+
+.post-list a::after {
+  background-color: var(--hover-bg);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .layout-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: var(--spacing-lg);
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+  
+  .profile-container {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .profile-circle {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+  
+  .main-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .content {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}

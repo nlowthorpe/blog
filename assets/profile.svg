@@ -1,0 +1,5 @@
+<svg xmlns="http://www.getic.com/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <rect width="100" height="100" fill="#fafcfc" />
+  <circle cx="50" cy="40" r="20" fill="#a3c4bc" />
+  <path d="M 20 90 Q 50 50 80 90" fill="#ffe8d6" stroke="#ffe8d6" stroke-width="4" />
+</svg>
