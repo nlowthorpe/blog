@@ -5,27 +5,36 @@ title: Home
 
 <h1>Hi, I'm Nicholas Lowthorpe 👋</h1>
 <p>I lead on solving messy, ambiguous business problems: challenging assumptions, focusing on what drives real
-outcomes, and ensuring investment in the right solutions.</p>
+  outcomes, and ensuring investment in the right solutions.</p>
 <p>Outside of work, I’m a perpetual tinkerer - constantly experimenting, building, and learning. </p>
+
+<div style="display: flex; align-items: center; gap: 1rem; margin-top: 0; flex-wrap: wrap;">
+  <p style="margin: 0; color: var(--text-secondary);">I built a course teaching effective data storytelling &
+    visualisation for executive presentations, taken by over 800 people and delivered as a guest lecturer at University
+    of Rotterdam. It's now available for free on Gumroad:</p>
+  <a class="gumroad-button" href="https://nicholaslowthorpe.gumroad.com/l/5csystem" target="_blank">Get my free
+    course on:</a>
+</div>
 <br>
-<a href="/about/" style="font-weight: 700;">More about my work and experience →</a>
+<a href="{{ '/about/' | url }}" style="font-weight: 700;">More about my work and experience →</a>
 
 <br><br><br>
 
 <h2>Recent posts</h2>
 <ul class="post-list">
-{% assign recentPost = collections.posts | reverse | first %}
-{% if recentPost %}
+  {% assign recentPost = collections.posts | reverse | first %}
+  {% if recentPost %}
   <li>
     <h3><a href="{{ recentPost.url | url }}">{{ recentPost.data.title }}</a></h3>
     <p style="margin-top: 0.5rem; color: var(--text-secondary);">
       {% if recentPost.data.description %}
-        {{ recentPost.data.description }}
+      {{ recentPost.data.description }}
       {% else %}
-        {{ recentPost.templateContent | strip_html | truncate: 150 }}
+      {{ recentPost.templateContent | strip_html | truncate: 150 }}
       {% endif %}
     </p>
-    <a href="{{ recentPost.url | url }}" style="font-size: 0.9em; font-weight: 700; margin-top: 1rem; display: inline-block;">Read more →</a>
+    <a href="{{ recentPost.url | url }}"
+      style="font-size: 0.9em; font-weight: 700; margin-top: 1rem; display: inline-block;">Read more →</a>
   </li>
-{% endif %}
+  {% endif %}
 </ul>
