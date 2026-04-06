@@ -355,4 +355,13 @@ p {
   .content {
     padding: var(--spacing-lg) var(--spacing-md);
   }
+
+  /* Adjust experience & education layout for mobile */
+  .experience-card, .education-card {
+    gap: 1rem;
+  }
+  
+  .experience-meta {
+    flex: 1 1 100%;
+  }
 }
