@@ -7,7 +7,7 @@ tags:
   - business-analysis
   - build-in-public
 layout: post.html
-excerpt: Business analysis is about making sense of messy processes, conflicting perspectives, and unclear problems, to drive effective change. What happens when you let AI do that?
+excerpt: Business analysis is about making sense of messy processes, conflicting perspectives, and unclear problems, to drive effective change. What happens when you let AI have a go at that?
 ---
 
 It's difficult to cut through the noise with AI right now. You've got startup founders claiming to wield entire org structures of agents - sales, marketing, product - automated businesses where the only human input is decision making. You've got skeptics who decry the efficiencies it can bring, obsessing over how LLMs once struggled to tell you how many 'r's are in 'strawberry'. Somewhere between those two extremes is the reality, and I'm interested in exploring that reality in business analysis.

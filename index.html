@@ -1,6 +1,6 @@
 ---
 layout: base.html
-title: Home
+title: Nicholas Lowthorpe
 ---
 
 <h1>Hi, I'm Nicholas Lowthorpe 👋</h1>
@@ -25,7 +25,8 @@ title: Home
   {% if recentPost %}
   <li>
     <h3><a href="{{ recentPost.url | url }}">{{ recentPost.data.title }}</a></h3>
-    <small style="color: var(--text-secondary); display: block; margin-top: 0.2rem;">{{ recentPost.date | date: "%d %b %Y" }}</small>
+    <small style="color: var(--text-secondary); display: block; margin-top: 0.2rem;">{{ recentPost.date | date: "%d %b
+      %Y" }}</small>
     <p style="margin-top: 0.5rem; color: var(--text-secondary);">
       {% if recentPost.data.excerpt %}
       {{ recentPost.data.excerpt }}
